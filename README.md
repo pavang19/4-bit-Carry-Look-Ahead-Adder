@@ -1,15 +1,14 @@
 # 4-bit-Carry-Look-Ahead-Adder
 This repository presents the design of 4-bit carry look ahead adder using mixed signal mode. 
 ## Table of contents
-#### 1.[ABSTRACT](https://github.com/pavang19/Half_Subtractor-#1-abstract)
-#### 2.[TOOLS USED](https://github.com/pavang19/Half_Subtractor-#2esim-eda-tool-1)
-#### 3.[Sky130 PDK](https://github.com/pavang19/Half_Subtractor-#3sky-130-pdk)
-#### 4.[CIRCUIT DESIGN](https://github.com/pavang19/Half_Subtractor-#4circuit-design-1)
-#### 5.[IMPLEMENTATION](https://github.com/pavang19/Half_Subtractor-#5implementation-1)
-#### 6.[RESULTS](https://github.com/pavang19/Half_Subtractor-#6results-1)
-#### 7.[REFERENCES](https://github.com/pavang19/Half_Subtractor-#7references-1)
-#### 8.[ACKNOWLEDGEMENT](https://github.com/pavang19/Half_Subtractor-#8acknowledgement-1)
-#### 7.[AUTHOR](https://github.com/pavang19/Half_Subtractor-#9author)
+#### 1.[ABSTRACT](https://github.com/pavang19/4-bit-Carry-Look-Ahead-Adder/blob/main/README.md#1-abstract)
+#### 2.[TOOLS USED](https://github.com/pavang19/4-bit-Carry-Look-Ahead-Adder/blob/main/README.md#2tools-used-1)
+#### 3.[CIRCUIT DESIGN](https://github.com/pavang19/4-bit-Carry-Look-Ahead-Adder/blob/main/README.md#3circuit-design)
+#### 4.[IMPLEMENTATION](https://github.com/pavang19/4-bit-Carry-Look-Ahead-Adder/blob/main/README.md#4implementation)
+#### 5.[RESULTS](https://github.com/pavang19/4-bit-Carry-Look-Ahead-Adder/blob/main/README.md#5results)
+#### 6.[REFERENCES](https://github.com/pavang19/4-bit-Carry-Look-Ahead-Adder/blob/main/README.md#6references)
+#### 7.[ACKNOWLEDGEMENT](https://github.com/pavang19/4-bit-Carry-Look-Ahead-Adder/blob/main/README.md#7acknowledgement)
+#### 8.[AUTHOR](https://github.com/pavang19/4-bit-Carry-Look-Ahead-Adder/blob/main/README.md#8author)
 
 ### 1. ABSTRACT
 This project proposes  the design of a 4-bit carry look ahead adder.A carry-lookahead adder improves speed by reducing the amount of time required to determine carry bits. It can be contrasted with the simpler, but usually slower, ripple-carry adder (RCA), for which the carry bit is calculated alongside the sum bit, and each stage must wait until the previous carry bit has been calculated to begin calculating its own sum bit and carry bit. The carry-lookahead adder calculates one or more carry bits before the sum, which reduces the wait time to calculate the result of the larger-value bits of the adder.In this project the digital part of the circuit is designed using Hardware Description Language (HDL) Verilog on makerchip.A model is created using verilator and finally the  circuit schematic is designed on eSim, an open source EDA tool and simulated on an open source spice simulater Ngspice.
