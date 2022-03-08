@@ -1,0 +1,57 @@
+* /home/pavan.gutti2/desktop/pavang_cla_adder/pavang_cla_adder.cir
+
+* u18  net-_u12-pad10_ net-_u12-pad11_ net-_u12-pad12_ net-_u12-pad13_ net-_u12-pad14_ o0 o1 o2 o3 o4 dac_bridge_5
+* u12  net-_u10-pad5_ net-_u10-pad6_ net-_u10-pad7_ net-_u10-pad8_ net-_u11-pad6_ net-_u11-pad7_ net-_u11-pad8_ net-_u11-pad9_ net-_u11-pad10_ net-_u12-pad10_ net-_u12-pad11_ net-_u12-pad12_ net-_u12-pad13_ net-_u12-pad14_ pavan_cla_adder
+* u10  i0 i1 i2 i3 net-_u10-pad5_ net-_u10-pad6_ net-_u10-pad7_ net-_u10-pad8_ adc_bridge_4
+* u11  i4 i5 i6 i7 i8 net-_u11-pad6_ net-_u11-pad7_ net-_u11-pad8_ net-_u11-pad9_ net-_u11-pad10_ adc_bridge_5
+v0  i0 gnd pulse(0 5 0.1m 0.1m 0.1m 1 2)
+v1  i1 gnd pulse(0 5 0.1m 0.1m 0.1m 1 3)
+v2  i2 gnd pulse(0 5 0.1m 0.1m 0.1m 1 4)
+v3  i3 gnd pulse(0 5 0.1m 0.1m 0.1m 1 5)
+v7  i7 gnd pulse(0 5 0.1m 0.1m 0.1m 1 6)
+v6  i6 gnd pulse(0 5 0.1m 0.1m 0.1m 1 7)
+v5  i5 gnd pulse(0 5 0.1m 0.1m 0.1m 1 8)
+v4  i4 gnd pulse(0 5 0.1m 0.1m 0.1m 1 9)
+v8  i8 gnd pulse(0 5 0.1m 0.1m 0.1m 1 10)
+* u5  i4 plot_v1
+* u6  i5 plot_v1
+* u7  i6 plot_v1
+* u9  i8 plot_v1
+* u1  i0 plot_v1
+* u2  i1 plot_v1
+* u3  i2 plot_v1
+* u4  i3 plot_v1
+* u8  i7 plot_v1
+r1  o0 gnd 1k
+r3  o2 gnd 1k
+r4  o3 gnd 1k
+r5  o4 gnd 1k
+r2  o1 gnd 1k
+* u13  o0 plot_v1
+* u14  o1 plot_v1
+* u15  o2 plot_v1
+* u17  o4 plot_v1
+* u16  o3 plot_v1
+a1 [net-_u12-pad10_ net-_u12-pad11_ net-_u12-pad12_ net-_u12-pad13_ net-_u12-pad14_ ] [o0 o1 o2 o3 o4 ] u18
+a2 [net-_u10-pad5_ net-_u10-pad6_ net-_u10-pad7_ net-_u10-pad8_ ] [net-_u11-pad6_ net-_u11-pad7_ net-_u11-pad8_ net-_u11-pad9_ ] [net-_u11-pad10_ ] [net-_u12-pad10_ net-_u12-pad11_ net-_u12-pad12_ net-_u12-pad13_ ] [net-_u12-pad14_ ] u12
+a3 [i0 i1 i2 i3 ] [net-_u10-pad5_ net-_u10-pad6_ net-_u10-pad7_ net-_u10-pad8_ ] u10
+a4 [i4 i5 i6 i7 i8 ] [net-_u11-pad6_ net-_u11-pad7_ net-_u11-pad8_ net-_u11-pad9_ net-_u11-pad10_ ] u11
+* Schematic Name:                             dac_bridge_5, NgSpice Name: dac_bridge
+.model u18 dac_bridge(out_low=0.0 out_high=5.0 out_undef=0.5 input_load=1.0e-12 t_rise=1.0e-9 t_fall=1.0e-9 ) 
+* Schematic Name:                             pavan_cla_adder, NgSpice Name: pavan_cla_adder
+.model u12 pavan_cla_adder(rise_delay=1.0e-9 fall_delay=1.0e-9 input_load=1.0e-12 instance_id=1 ) 
+* Schematic Name:                             adc_bridge_4, NgSpice Name: adc_bridge
+.model u10 adc_bridge(in_low=1.0 in_high=2.0 rise_delay=1.0e-9 fall_delay=1.0e-9 ) 
+* Schematic Name:                             adc_bridge_5, NgSpice Name: adc_bridge
+.model u11 adc_bridge(in_low=1.0 in_high=2.0 rise_delay=1.0e-9 fall_delay=1.0e-9 ) 
+.tran 0.1e-00 20e-00 0e-00
+
+* Control Statements 
+.control
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+ 
+plot v(i0) v(i1)+6 v(i2) +12 v(i3)+18 v(i4)+24 v(i5)+30 v(i6)+36 v(i7)+42 v(i8)+48 v(o0)+54 v(o1)+60 v(o2)+66 v(o4)+72 v(o3)+78
+.endc
+.end
