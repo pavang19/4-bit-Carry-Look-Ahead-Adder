@@ -86,7 +86,7 @@ REFERENCE CIRCUIT DIAGRAM
 
 REFERENCE WAVEFORM
 
-![ref waveform](https://user-images.githubusercontent.com/55171083/157289826-96c2c968-a97e-4c58-9356-b518f932e959.jpg)
+![reference waveform](https://user-images.githubusercontent.com/55171083/157383971-80c25b1b-3b4a-4a3a-8b95-fac9d407d938.jpeg)
 
 
 ### 4.IMPLEMENTATION 
@@ -101,7 +101,7 @@ The digital block is designed using a Hardware descriptive language (HDL) verilo
 
 //Your Verilog/System Verilog Code Starts Here:
 
-module Cla_adder(sum, c_out, a, b, c_in
+module pavan_cla_adder(sum, c_out, a, b, c_in
     );
 // Inputs and outputs
 output [3:0] sum;
