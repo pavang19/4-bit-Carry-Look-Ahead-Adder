@@ -1,4 +1,4 @@
-# 4-bit-Carry-Look-Ahead-Adder
+# 4-bit-Carry-Look-Ahead-Adder using Mixed Signal Mode.
 This repository presents the design of 4-bit carry look ahead adder using mixed signal mode. 
 ## Table of contents
 #### 1.[ABSTRACT](https://github.com/pavang19/4-bit-Carry-Look-Ahead-Adder/blob/main/README.md#1-abstract)
